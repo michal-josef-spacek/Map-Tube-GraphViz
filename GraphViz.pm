@@ -87,19 +87,20 @@ sub new {
 sub graph {
 	my ($self, $output_file) = @_;
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
-		my $node_links = split m/,/ms, $node->link;
+		my @node_lines = split m/,/ms, $node->line;
 		my %params;
-		if ($node_links > 2) {
+		if (@node_lines == 1) {
 			%params = (
-				'fillcolor' => 'yellow',
 				'style' => 'filled',
-				'shape' => 'diamond',
+				'fillcolor' => $self->{'color_callback'}
+					->($node_lines[0]),
 			);
-		} elsif ($node_links == 1) {
+		} else {
 			%params = (
-				'fillcolor' => 'cyan',
-				'style' => 'filled',
-				'shape' => 'box',
+				'style' => 'wedged',
+				'fillcolor' => (join ':', map {
+					$self->{'color_callback'}->($_)
+				} @node_lines),
 			);
 		}
 		$self->{'_g'}->add_node(
