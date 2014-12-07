@@ -9,14 +9,11 @@ use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use GraphViz2;
 use List::MoreUtils qw(none);
+use Map::Tube::GraphViz::Utils qw(node_color);
 use Readonly;
 use Scalar::Util qw(blessed);
 
 # Constants.
-Readonly::Array our @COLORS => qw(red green yellow cyan magenta blue grey
-	orange brown white greenyellow red4 violet tomato cadetblue aquamarine
-	lawngreen indigo deeppink darkslategrey khaki thistle peru darkgreen
-);
 Readonly::Array our @OUTPUTS => qw(text png);
 
 # Version.
@@ -29,23 +26,8 @@ sub new {
 	# Create object.
 	my $self = bless {}, $class;
 
-	# Color callback.
-	$self->{'color_callback'} = sub {
-		my $line = shift;
-		if (! exists $self->{'_color_line'}->{$line}) {
-			if (! exists $self->{'_color_index'}) {
-				$self->{'_color_index'} = 0;
-			} else {
-				$self->{'_color_index'}++;
-				if ($self->{'_color_index'} > $#COLORS) {
-					err "No color for line '$line'.";
-				}
-			}
-			my $rand_color = $COLORS[$self->{'_color_index'}];
-			$self->{'_color_line'}->{$line} = $rand_color;
-		}
-		return $self->{'_color_line'}->{$line};
-	};
+	# Node callback.
+	$self->{'node_callback'} = \&node_color;
 
 	# Driver.
 	$self->{'driver'} = 'dot';
@@ -87,27 +69,7 @@ sub new {
 sub graph {
 	my ($self, $output_file) = @_;
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
-		my @node_lines = split m/,/ms, $node->line;
-		my %params;
-		if (@node_lines == 1) {
-			%params = (
-				'style' => 'filled',
-				'fillcolor' => $self->{'color_callback'}
-					->($node_lines[0]),
-			);
-		} else {
-			%params = (
-				'style' => 'wedged',
-				'fillcolor' => (join ':', map {
-					$self->{'color_callback'}->($_)
-				} @node_lines),
-			);
-		}
-		$self->{'_g'}->add_node(
-			'label' => $node->name,
-			'name' => $node->id,
-			%params,
-		);
+		$self->{'node_callback'}->($self, $node);
 	}
 	my @processed;
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
