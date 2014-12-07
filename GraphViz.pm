@@ -13,6 +13,10 @@ use Readonly;
 use Scalar::Util qw(blessed);
 
 # Constants.
+Readonly::Array our @COLORS => qw(red green yellow cyan magenta blue grey
+	orange brown white greenyellow red4 violet tomato cadetblue aquamarine
+	lawngreen indigo deeppink darkslategrey khaki thistle peru darkgreen
+);
 Readonly::Array our @OUTPUTS => qw(text png);
 
 # Version.
@@ -24,6 +28,24 @@ sub new {
 
 	# Create object.
 	my $self = bless {}, $class;
+
+	# Color callback.
+	$self->{'color_callback'} = sub {
+		my $line = shift;
+		if (! exists $self->{'_color_line'}->{$line}) {
+			if (! exists $self->{'_color_index'}) {
+				$self->{'_color_index'} = 0;
+			} else {
+				$self->{'_color_index'}++;
+				if ($self->{'_color_index'} > $#COLORS) {
+					err "No color for line '$line'.";
+				}
+			}
+			my $rand_color = $COLORS[$self->{'_color_index'}];
+			$self->{'_color_line'}->{$line} = $rand_color;
+		}
+		return $self->{'_color_line'}->{$line};
+	};
 
 	# Driver.
 	$self->{'driver'} = 'dot';
