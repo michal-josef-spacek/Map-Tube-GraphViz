@@ -23,21 +23,7 @@ our $VERSION = 0.01;
 # Create GraphViz color node.
 sub node_color {
 	my ($obj, $node) = @_;
-	my @node_lines = split m/,/ms, $node->line;
-	my %params;
-	if (@node_lines == 1) {
-		%params = (
-			'style' => 'filled',
-			'fillcolor' => color_line($obj, $node_lines[0]),
-		);
-	} else {
-		%params = (
-			'style' => 'wedged',
-			'fillcolor' => (join ':', map {
-				color_line($obj, $_);
-			} @node_lines),
-		);
-	}
+	my %params = _node_color_params($obj, $node);
 	$obj->{'_g'}->add_node(
 		'label' => $node->name,
 		'name' => $node->id,
@@ -49,21 +35,7 @@ sub node_color {
 # Create GraphViz color node without label.
 sub node_color_without_label {
 	my ($obj, $node) = @_;
-	my @node_lines = split m/,/ms, $node->line;
-	my %params;
-	if (@node_lines == 1) {
-		%params = (
-			'style' => 'filled',
-			'fillcolor' => color_line($obj, $node_lines[0]),
-		);
-	} else {
-		%params = (
-			'style' => 'wedged',
-			'fillcolor' => (join ':', map {
-				color_line($obj, $_);
-			} @node_lines),
-		);
-	}
+	my %params = _node_color_params($obj, $node);
 	$obj->{'_g'}->add_node(
 		'label' => '',
 		'name' => $node->id,
@@ -88,6 +60,27 @@ sub color_line {
 		$obj->{'_color_line'}->{$line} = $rand_color;
 	}
 	return $obj->{'_color_line'}->{$line};
+}
+
+# Get color node parameters.
+sub _node_color_params {
+	my ($obj, $node) = @_;
+	my @node_lines = split m/,/ms, $node->line;
+	my %params;
+	if (@node_lines == 1) {
+		%params = (
+			'style' => 'filled',
+			'fillcolor' => color_line($obj, $node_lines[0]),
+		);
+	} else {
+		%params = (
+			'style' => 'wedged',
+			'fillcolor' => (join ':', map {
+				color_line($obj, $_);
+			} @node_lines),
+		);
+	}
+	return %params;
 }
 
 1;
