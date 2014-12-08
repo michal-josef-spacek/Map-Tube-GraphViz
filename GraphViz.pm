@@ -55,10 +55,17 @@ sub new {
 	# TODO
 
 	# GraphViz object.
+	my $name = $self->{'tube'}->name;
 	$self->{'_g'} = GraphViz2->new(
 		'global' => {
 			'directed' => 0,
 		},
+		$name ? (
+			'graph' => {
+				# TODO Bigger font
+				'label' => $name,
+			},
+		) : (),
 	);
 
 	# Object.
