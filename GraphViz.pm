@@ -52,7 +52,12 @@ sub new {
 	}
 
 	# Check output.
-	# TODO
+	if (! defined $self->{'output'}) {
+		err "Parameter 'output' is required.";
+	}
+	if (none { $self->{'output'} eq $_ } @OUTPUTS) {
+		err "Unsupported 'output' parameter '$self->{'output'}.";
+	}
 
 	# GraphViz object.
 	my $name = $self->{'tube'}->name;
