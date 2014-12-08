@@ -68,6 +68,7 @@ sub new {
 		$name ? (
 			'graph' => {
 				'label' => $name,
+				'labelloc' => 'top',
 			},
 		) : (),
 	);
