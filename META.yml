@@ -25,7 +25,7 @@ no_index:
     - inc
     - t
 requires:
-  Map::Tube: '2.26'
+  Map::Tube: '2.41'
   Moo: 0
   namespace::clean: 0
   perl: 5.8.0

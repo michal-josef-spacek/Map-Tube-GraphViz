@@ -12,7 +12,7 @@ license 'bsd';
 license 'artistic_2';
 name 'Map-Tube-GraphViz';
 readme_from 'GraphViz.pm';
-requires 'Map::Tube' => '2.26';
+requires 'Map::Tube' => '2.41';
 requires 'Moo' => 0;
 requires 'namespace::clean' => 0;
 requires 'perl' => '5.8.0';
