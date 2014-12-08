@@ -67,7 +67,6 @@ sub new {
 		},
 		$name ? (
 			'graph' => {
-				# TODO Bigger font
 				'label' => $name,
 			},
 		) : (),
