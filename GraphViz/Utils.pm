@@ -86,3 +86,78 @@ sub _node_color_params {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+ Map::Tube::GraphViz::Utils - Utilities for Map::Tube::GraphViz module.
+
+=head1 SYNOPSIS
+
+ use Map::Tube::GraphViz::Utils qw(node_color node_color_without_label color_line);
+ node_color($obj, $node);
+ node_color_without_label($obj, $node);
+ my $color = color_line($obj, $line);
+
+=head1 SUBROUTINES
+
+=over 8
+
+=item C<node_color($obj, $node)>
+
+ Create GraphViz color node.
+ $obj is Map::Tube::GraphViz object.
+ Returns undef.
+
+=item C<node_color_without_label($obj, $node)>
+
+ Create GraphViz color node without label.
+ $obj is Map::Tube::GraphViz object.
+ Returns undef.
+
+=item C<color_line($obj, $line)>
+
+ Get line color.
+ $obj is Map::Tube::GraphViz object.
+ Returns color of metro line.
+
+=back
+
+=head1 ERRORS
+
+ color_line():
+         No color for line '%s'.
+
+=head1 DEPENDENCIES
+
+L<Error::Pure>,
+L<Exporter>,
+L<Readonly>.
+
+=head1 SEE ALSO
+
+L<Map::Tube>.
+
+=head1 REPOSITORY
+
+L<https://github.com/tupinek/Map-Tube-GraphViz>
+
+=head1 AUTHOR
+
+Michal Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+ © 2014 Michal Špaček
+ BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
