@@ -27,7 +27,7 @@ sub new {
 	my $self = bless {}, $class;
 
 	# Node callback.
-	$self->{'node_callback'} = \&node_color;
+	$self->{'callback_node'} = \&node_color;
 
 	# Driver.
 	$self->{'driver'} = 'dot';
@@ -81,7 +81,7 @@ sub new {
 sub graph {
 	my ($self, $output_file) = @_;
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
-		$self->{'node_callback'}->($self, $node);
+		$self->{'callback_node'}->($self, $node);
 	}
 	my @processed;
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
