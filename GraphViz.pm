@@ -26,6 +26,16 @@ sub new {
 	# Create object.
 	my $self = bless {}, $class;
 
+	# Edge callback.
+	$self->{'callback_edge'} = sub {
+		my ($self, $from, $to) = @_;
+		$self->{'_g'}->add_edge(
+			'from' => $from,
+			'to' => $to,
+		);
+		return;
+	};
+
 	# Node callback.
 	$self->{'callback_node'} = \&node_color;
 
@@ -92,10 +102,7 @@ sub graph {
 				($_->[0] eq $link && $_->[1] eq $node->id)
 				} @processed) {
 
-				$self->{'_g'}->add_edge(
-					'from' => $node->id,
-					'to' => $link,
-				);
+				$self->{'callback_edge'}->($node->id, $link);
 				push @processed, [$node->id, $link];
 			}
 		}
