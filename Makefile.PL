@@ -6,7 +6,7 @@ use warnings;
 use inc::Module::Install;
 
 # Definition.
-abstract 'GraphViz interface to the Tube Map.';
+abstract 'GraphViz interface to the Map::Tube.';
 author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 license 'artistic_2';

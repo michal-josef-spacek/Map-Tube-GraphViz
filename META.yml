@@ -1,5 +1,5 @@
 ---
-abstract: 'GraphViz interface to the Tube Map.'
+abstract: 'GraphViz interface to the Map::Tube.'
 author:
   - 'Michal Spacek <skim@cpan.org>'
 build_requires:
