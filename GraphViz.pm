@@ -102,7 +102,8 @@ sub graph {
 				($_->[0] eq $link && $_->[1] eq $node->id)
 				} @processed) {
 
-				$self->{'callback_edge'}->($node->id, $link);
+				$self->{'callback_edge'}->($self, $node->id,
+					$link);
 				push @processed, [$node->id, $link];
 			}
 		}
