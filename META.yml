@@ -26,9 +26,13 @@ no_index:
     - inc
     - t
 requires:
-  Map::Tube: '2.41'
-  Moo: 0
-  namespace::clean: 0
+  Class::Utils: '0.06'
+  Error::Pure: '0.21'
+  Exporter: 0
+  GraphViz2: 0
+  List::MoreUtils: 0
+  Readonly: 0
+  Scalar::Util: 0
   perl: 5.8.0
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Map-Tube-GraphViz
