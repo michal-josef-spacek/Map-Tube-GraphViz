@@ -107,11 +107,12 @@ sub graph {
 			}
 		}
 	}
-	return $self->{'_g'}->run(
+	$self->{'_g'}->run(
 		'driver' => $self->{'driver'},
 		'format' => $self->{'output'},
 		'output_file' => $output_file,
 	);
+	return;
 }
 
 1;
