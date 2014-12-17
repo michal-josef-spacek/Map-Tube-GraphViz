@@ -66,7 +66,7 @@ sub new {
 		err "Parameter 'output' is required.";
 	}
 	if (none { $self->{'output'} eq $_ } @OUTPUTS) {
-		err "Unsupported 'output' parameter '$self->{'output'}.";
+		err "Unsupported 'output' parameter '$self->{'output'}'.";
 	}
 
 	# GraphViz object.
