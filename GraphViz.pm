@@ -119,3 +119,169 @@ sub graph {
 1;
 
 __END__
+
+=encoding utf8
+
+=head1 NAME
+
+Map::Tube::GraphViz - GraphViz output for Map::Tube.
+
+=head1 SYNOPSIS
+
+ use Map::Tube::GraphViz;
+ my $obj = Map::Tube::GraphViz->new(%params);
+ $obj->graph($output_file);
+
+=head1 METHODS
+
+=over 8
+
+=item C<new(%params)>
+
+ Constructor.
+
+=over 8
+
+=item * C<callback_edge>
+
+ Edge callback.
+ Default value is this:
+ sub { 
+         my ($self, $from, $to) = @_;
+         $self->{'_g'}->add_edge(
+         	'from' => $from,
+         	'to' => $to,
+         );
+         return;
+ }
+
+=item * C<callback_node>
+
+ Node callback.
+ Default value is \&Map::Tube::GraphViz::Utils::node_color.
+
+=item * C<driver>
+
+ GraphViz2 driver.
+ Default value is 'dot'.
+
+=item * C<output>
+
+ GraphViz2 output.
+ It is required.
+ Default value is 'png'.
+ Possible values are 'png' and 'text'.
+
+=item * C<tube>
+
+ Map::Tube object.
+ It is required.
+ Default value is undef.
+
+=back
+
+=item C<graph($output_file)>
+ 
+ Get graph and save it to $output_file file.
+ Returns undef.
+
+=back
+
+=head1 ERRORS
+
+ new():
+         Parameter 'tube' is required.
+         Parameter 'tube' must be 'Map::Tube' object.
+         Parameter 'output' is required.
+         Unsupported 'output' parameter '%s'.
+         From Map::Tube::GraphViz::Utils::color_line():
+                 No color for line '%s'.
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
+
+=head1 EXAMPLE1
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use English;
+ use Error::Pure qw(err);
+ use Map::Tube::GraphViz;
+
+ # Arguments.
+ if (@ARGV < 1) {
+         print STDERR "Usage: $0 metro\n";
+         exit 1;
+ }
+ my $metro = $ARGV[0];
+ 
+ # Object.
+ my $class = 'Map::Tube::'.$metro;
+ eval "require $class;";
+ if ($EVAL_ERROR) {
+         err "Cannot load '$class' class.",
+                 'Error', $EVAL_ERROR;
+ }
+ 
+ # Metro object.
+ my $tube = eval "$class->new";
+ if ($EVAL_ERROR) {
+         err "Cannot create object for '$class' class.",
+                 'Error', $EVAL_ERROR;
+ }
+ 
+ # GraphViz object.
+ my $g = Map::Tube::GraphViz->new(
+         'driver' => 'neato',
+         'tube' => $tube,
+ );
+ 
+ # Get graph to file.
+ $g->graph($metro.'.png');
+
+ # Print file.
+ system "ls -l $metro.png";
+
+ # Output without arguments like:
+ # Usage: /tmp/SZXfa2g154 metro
+
+ # Output with 'Berlin' argument like:
+ # -rw-r--r-- 1 skim skim 1503518 Dec 17 01:10 Berlin.png
+
+=head1 DEPENDENCIES
+
+L<Class::Utils>,
+L<Error::Pure>,
+L<GraphViz2>,
+L<List::MoreUtils>,
+L<Map::Tube::GraphViz::Utils>,
+L<Readonly>,
+L<Scalar::Util>.
+
+=head1 SEE ALSO
+
+L<Map::Tube>.
+
+=head1 REPOSITORY
+
+L<https://github.com/tupinek/Map-Tube-GraphViz>
+
+=head1 AUTHOR
+
+Michal Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+ © 2014 Michal Špaček
+ Artistic License
+ BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
