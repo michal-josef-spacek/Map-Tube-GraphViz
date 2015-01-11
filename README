@@ -168,7 +168,7 @@ DEPENDENCIES
     Map::Tube::GraphViz::Utils, Readonly, Scalar::Util.
 
 SEE ALSO
-    Map::Tube.
+    Map::Tube, Map::Tube::GraphViz, Map::Tube::Text::Table, Task::Map::Tube.
 
 REPOSITORY
     <https://github.com/tupinek/Map-Tube-GraphViz>
