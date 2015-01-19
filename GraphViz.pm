@@ -331,9 +331,13 @@ L<Scalar::Util>.
 =head1 SEE ALSO
 
 L<Map::Tube>,
+L<Map::Tube::Graph>,
 L<Map::Tube::GraphViz>,
+L<Map::Tube::Plugin::Graph>,
 L<Map::Tube::Text::Table>,
 L<Task::Map::Tube>.
+
+L<Map::Metro::Graph>.
 
 =head1 REPOSITORY
 

@@ -1,4 +1,6 @@
 0.02
+ - Add Map::Tube::Graph, Map::Tube::Plugin::Graph and Map::Metro::Graph to SEE
+   ALSO section in doc.
  - Add error check to GraphViz->run method (Thanks Gisbert W. Selke).
  - Add 'name' parameter (Thanks Gisbert W. Selke).
  - Add Map::Tube::GraphViz, Map::Tube::Text::Table and Task::Map::Tube to SEE
