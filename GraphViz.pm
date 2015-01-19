@@ -6,6 +6,7 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
+use English;
 use Error::Pure qw(err);
 use GraphViz2;
 use List::MoreUtils qw(none);
@@ -109,11 +110,18 @@ sub graph {
 			}
 		}
 	}
-	$self->{'_g'}->run(
-		'driver' => $self->{'driver'},
-		'format' => $self->{'output'},
-		'output_file' => $output_file,
-	);
+	eval {
+		$self->{'_g'}->run(
+			'driver' => $self->{'driver'},
+			'format' => $self->{'output'},
+			'output_file' => $output_file,
+		);
+	};
+	if ($EVAL_ERROR) {
+		err 'Cannot create GraphViz output.',
+			'Error', $EVAL_ERROR,
+			'Dot input', $self->{'_g'}->dot_input;
+	}
 	return;
 }
 
@@ -313,6 +321,7 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 =head1 DEPENDENCIES
 
 L<Class::Utils>,
+L<English>,
 L<Error::Pure>,
 L<GraphViz2>,
 L<List::MoreUtils>,

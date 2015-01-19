@@ -170,7 +170,7 @@ EXAMPLE2
      # -rw-r--r-- 1 skim skim 1503518 Dec 17 01:10 Berlin.png
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, GraphViz2, List::MoreUtils,
+    Class::Utils, English, Error::Pure, GraphViz2, List::MoreUtils,
     Map::Tube::GraphViz::Utils, Scalar::Util.
 
 SEE ALSO
