@@ -42,6 +42,9 @@ sub new {
 	# Driver.
 	$self->{'driver'} = 'neato';
 
+	# Name of map.
+	$self->{'name'} = undef;
+
 	# Output.
 	$self->{'output'} = 'png';
 
@@ -70,7 +73,7 @@ sub new {
 	}
 
 	# GraphViz object.
-	my $name = $self->{'tube'}->name;
+	my $name = $self->{'name'} || $self->{'tube'}->name;
 	$self->{'_g'} = GraphViz2->new(
 		'global' => {
 			'directed' => 0,
@@ -164,6 +167,11 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 
  GraphViz2 driver.
  Default value is 'neato'.
+
+=item * C<name>
+
+ Name of map.
+ Default value is Map::Tube->name or undef.
 
 =item * C<output>
 
@@ -329,6 +337,10 @@ L<https://github.com/tupinek/Map-Tube-GraphViz>
 Michal Špaček L<mailto:skim@cpan.org>
 
 L<http://skim.cz>
+
+=head1 CONTRIBUTORS
+
+ Gisbert W. Selke
 
 =head1 LICENSE AND COPYRIGHT
 

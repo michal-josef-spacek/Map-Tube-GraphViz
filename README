@@ -33,6 +33,11 @@ METHODS
                      GraphViz2 driver.
                      Default value is 'neato'.
 
+            *       "name"
+
+                     Name of map.
+                     Default value is Map::Tube->name or undef.
+
             *       "output"
 
                      GraphViz2 output.
@@ -177,6 +182,9 @@ AUTHOR
     Michal Špaček <mailto:skim@cpan.org>
 
     <http://skim.cz>
+
+CONTRIBUTORS
+     Gisbert W. Selke
 
 LICENSE AND COPYRIGHT
      © 2014-2015 Michal Špaček
