@@ -18,7 +18,7 @@ Readonly::Array our @COLORS => qw(red green yellow cyan magenta blue grey
 );
 
 # Version.
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # Create GraphViz color node.
 sub node_color {
@@ -158,6 +158,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut

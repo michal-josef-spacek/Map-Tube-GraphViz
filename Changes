@@ -1,3 +1,5 @@
+0.03
+
 0.02 2015-01-19T23:25:15+01:00
  - Add 'name' parameter (Thanks Gisbert W. Selke).
  - Add Map::Tube::Graph, Map::Tube::Plugin::Graph and Map::Metro::Graph to
