@@ -31,7 +31,7 @@ METHODS
             *       "driver"
 
                      GraphViz2 driver.
-                     Default value is 'dot'.
+                     Default value is 'neato'.
 
             *       "output"
 

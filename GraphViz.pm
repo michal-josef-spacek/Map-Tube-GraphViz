@@ -40,7 +40,7 @@ sub new {
 	$self->{'callback_node'} = \&node_color;
 
 	# Driver.
-	$self->{'driver'} = 'dot';
+	$self->{'driver'} = 'neato';
 
 	# Output.
 	$self->{'output'} = 'png';
@@ -163,7 +163,7 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 =item * C<driver>
 
  GraphViz2 driver.
- Default value is 'dot'.
+ Default value is 'neato'.
 
 =item * C<output>
 

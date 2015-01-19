@@ -1,6 +1,7 @@
 0.02
  - Add Map::Tube::GraphViz, Map::Tube::Text::Table and Task::Map::Tube to SEE
    ALSO section in doc.
+ - Change default 'driver' parameter to 'neato'.
  - Update copyright years to 2015.
 
 0.01 2014-12-17T01:20:04+01:00
