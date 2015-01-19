@@ -10,11 +10,7 @@ use Error::Pure qw(err);
 use GraphViz2;
 use List::MoreUtils qw(none);
 use Map::Tube::GraphViz::Utils qw(node_color);
-use Readonly;
 use Scalar::Util qw(blessed);
-
-# Constants.
-Readonly::Array our @OUTPUTS => qw(text png);
 
 # Version.
 our $VERSION = 0.02;
@@ -64,14 +60,6 @@ sub new {
 		err "Parameter 'tube' must be 'Map::Tube' object.";
 	}
 
-	# Check output.
-	if (! defined $self->{'output'}) {
-		err "Parameter 'output' is required.";
-	}
-	if (none { $self->{'output'} eq $_ } @OUTPUTS) {
-		err "Unsupported 'output' parameter '$self->{'output'}'.";
-	}
-
 	# GraphViz object.
 	my $name = $self->{'name'} || $self->{'tube'}->name;
 	$self->{'_g'} = GraphViz2->new(
@@ -85,6 +73,16 @@ sub new {
 			},
 		) : (),
 	);
+
+	# Check output format.
+	if (! defined $self->{'output'}) {
+		err "Parameter 'output' is required.";
+	}
+	if (none { $self->{'output'} eq $_ }
+		keys %{$self->{'_g'}->valid_attributes->{'output_format'}}) {
+
+		err "Unsupported 'output' parameter '$self->{'output'}'.";
+	}
 
 	# Object.
 	return $self;
@@ -178,7 +176,8 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  GraphViz2 output.
  It is required.
  Default value is 'png'.
- Possible values are 'png' and 'text'.
+ Possible values are every formats supported by GraphViz2 module.
+ See L<http://www.graphviz.org/content/output-formats>.
 
 =item * C<tube>
 
@@ -318,7 +317,6 @@ L<Error::Pure>,
 L<GraphViz2>,
 L<List::MoreUtils>,
 L<Map::Tube::GraphViz::Utils>,
-L<Readonly>,
 L<Scalar::Util>.
 
 =head1 SEE ALSO

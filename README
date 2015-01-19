@@ -43,7 +43,8 @@ METHODS
                      GraphViz2 output.
                      It is required.
                      Default value is 'png'.
-                     Possible values are 'png' and 'text'.
+                     Possible values are every formats supported by GraphViz2 module.
+                     See L<http://www.graphviz.org/content/output-formats>.
 
             *       "tube"
 
@@ -170,7 +171,7 @@ EXAMPLE2
 
 DEPENDENCIES
     Class::Utils, Error::Pure, GraphViz2, List::MoreUtils,
-    Map::Tube::GraphViz::Utils, Readonly, Scalar::Util.
+    Map::Tube::GraphViz::Utils, Scalar::Util.
 
 SEE ALSO
     Map::Tube, Map::Tube::GraphViz, Map::Tube::Text::Table, Task::Map::Tube.
