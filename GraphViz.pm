@@ -351,7 +351,11 @@ L<http://skim.cz>
 
 =head1 CONTRIBUTORS
 
- Gisbert W. Selke
+=over
+
+=item Gisbert W. Selke L<gws@cpan.org>
+
+=back
 
 =head1 LICENSE AND COPYRIGHT
 
