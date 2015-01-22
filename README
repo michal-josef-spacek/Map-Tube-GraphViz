@@ -174,8 +174,8 @@ DEPENDENCIES
     Map::Tube::GraphViz::Utils, Scalar::Util.
 
 SEE ALSO
-    Map::Tube, Map::Tube::Graph, Map::Tube::GraphViz,
-    Map::Tube::Plugin::Graph, Map::Tube::Text::Table, Task::Map::Tube.
+    Map::Tube, Map::Tube::Graph, Map::Tube::Plugin::Graph,
+    Map::Tube::Text::Table, Task::Map::Tube.
 
     Map::Metro::Graph.
 
