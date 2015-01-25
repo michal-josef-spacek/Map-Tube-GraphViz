@@ -1,4 +1,4 @@
-0.03
+0.03 2015-01-25T01:17:05+01:00
  - Improve CONTRIBUTORS section in doc.
  - Remove Map::Tube::GraphViz from SEE ALSO section in doc.
  - Rewrite to Map::Tube 2.72 version API (Map::Tube::Node->line).
