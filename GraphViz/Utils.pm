@@ -47,25 +47,30 @@ sub node_color_without_label {
 # Get line color.
 sub color_line {
 	my ($obj, $line) = @_;
-	if (! exists $obj->{'_color_line'}->{$line}) {
-		if (! exists $obj->{'_color_index'}) {
-			$obj->{'_color_index'} = 0;
+	my $line_name = $line->id || $line->name;
+	if (! exists $obj->{'_color_line'}->{$line_name}) {
+		if ($line->color) {
+			$obj->{'_color_line'}->{$line_name} = $line->color;
 		} else {
-			$obj->{'_color_index'}++;
-			if ($obj->{'_color_index'} > $#COLORS) {
-				err "No color for line '$line'.";
+			if (! exists $obj->{'_color_index'}) {
+				$obj->{'_color_index'} = 0;
+			} else {
+				$obj->{'_color_index'}++;
+				if ($obj->{'_color_index'} > $#COLORS) {
+					err "No color for line '$line'.";
+				}
 			}
+			my $rand_color = $COLORS[$obj->{'_color_index'}];
+			$obj->{'_color_line'}->{$line_name} = $rand_color;
 		}
-		my $rand_color = $COLORS[$obj->{'_color_index'}];
-		$obj->{'_color_line'}->{$line} = $rand_color;
 	}
-	return $obj->{'_color_line'}->{$line};
+	return $obj->{'_color_line'}->{$line_name};
 }
 
 # Get color node parameters.
 sub _node_color_params {
 	my ($obj, $node) = @_;
-	my @node_lines = split m/,/ms, $node->line;
+	my @node_lines = @{$node->line};
 	my %params;
 	if (@node_lines == 1) {
 		%params = (
