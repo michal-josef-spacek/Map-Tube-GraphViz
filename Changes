@@ -1,5 +1,6 @@
 0.04
  - Add 'g' parameter for GraphViz2 object.
+ - Add images for EXAMPLE sections to doc.
  - Fix graph name.
 
 0.03 2015-01-25T01:17:05+01:00

@@ -301,7 +301,15 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  # Usage: /tmp/SZXfa2g154 metro
 
  # Output with 'Berlin' argument like:
- # -rw-r--r-- 1 skim skim 1503518 Dec 17 01:10 Berlin.png
+ # -rw-r--r-- 1 skim skim 1503067 Jan 27 07:24 Berlin.png
+
+=begin html
+
+<a href="https://raw.githubusercontent.com/tupinek/Map-Tube-GraphViz/master/images/ex1.png">
+  <img src="https://raw.githubusercontent.com/tupinek/Map-Tube-GraphViz/master/images/ex1.png" alt="Berlin" width="300px" height="300px" />
+</a>
+
+=end html
 
 =head1 EXAMPLE2
 
@@ -354,7 +362,15 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  # Usage: /tmp/SZXfa2g154 metro
 
  # Output with 'Berlin' argument like:
- # -rw-r--r-- 1 skim skim 1503518 Dec 17 01:10 Berlin.png
+ # -rw-r--r-- 1 skim skim 885928 Jan 27 07:43 Berlin.png
+
+=begin html
+
+<a href="https://raw.githubusercontent.com/tupinek/Map-Tube-GraphViz/master/images/ex2.png">
+  <img src="https://raw.githubusercontent.com/tupinek/Map-Tube-GraphViz/master/images/ex2.png" alt="Berlin" width="300px" height="300px" />
+</a>
+
+=end html
 
 =head1 DEPENDENCIES
 
