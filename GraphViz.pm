@@ -58,8 +58,16 @@ sub new {
 	if (! defined $self->{'tube'}) {
 		err "Parameter 'tube' is required.";
 	}
+	if (! defined &UNIVERSAL::DOES) {
+		eval {
+			require UNIVERSAL::DOES;
+		};
+		if ($EVAL_ERROR) {
+			err 'Cannot load UNIVERSAL::DOES module.';
+		}
+	}
 	if (! blessed($self->{'tube'})
-		|| ! $self->{'tube'}->does('Map::Tube')) {
+		|| ! $self->{'tube'}->DOES('Map::Tube')) {
 
 		err "Parameter 'tube' must be 'Map::Tube' object.";
 	}
@@ -243,6 +251,7 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 =head1 ERRORS
 
  new():
+         Cannot load UNIVERSAL::DOES module.
          Parameter 'tube' is required.
          Parameter 'tube' must be 'Map::Tube' object.
          Parameter 'output' is required.

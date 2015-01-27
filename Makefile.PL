@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 # Modules.
+use English;
 use inc::Module::Install;
 
 # Definition.
@@ -19,6 +20,9 @@ requires 'GraphViz2' => 0;
 requires 'List::MoreUtils' => 0;
 requires 'Readonly' => 0;
 requires 'Scalar::Util' => 0;
+if ($PERL_VERSION lt v5.10.1) {
+	requires 'UNIVERSAL::DOES' => 0;
+}
 requires 'perl' => '5.6.0';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=Map-Tube-GraphViz';

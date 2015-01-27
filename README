@@ -76,6 +76,7 @@ METHODS
 
 ERRORS
      new():
+             Cannot load UNIVERSAL::DOES module.
              Parameter 'tube' is required.
              Parameter 'tube' must be 'Map::Tube' object.
              Parameter 'output' is required.
