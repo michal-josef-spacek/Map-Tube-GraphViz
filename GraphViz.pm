@@ -14,7 +14,7 @@ use Map::Tube::GraphViz::Utils qw(node_color);
 use Scalar::Util qw(blessed);
 
 # Version.
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 # Constructor.
 sub new {
@@ -487,6 +487,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.04
+0.05
 
 =cut
