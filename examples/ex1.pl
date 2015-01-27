@@ -33,7 +33,6 @@ if ($EVAL_ERROR) {
 
 # GraphViz object.
 my $g = Map::Tube::GraphViz->new(
-        'driver' => 'neato',
         'tube' => $tube,
 );
 

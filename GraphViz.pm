@@ -287,7 +287,6 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  
  # GraphViz object.
  my $g = Map::Tube::GraphViz->new(
-         'driver' => 'neato',
          'tube' => $tube,
  );
  
@@ -348,7 +347,6 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  # GraphViz object.
  my $g = Map::Tube::GraphViz->new(
          'callback_node' => \&node_color_without_label,
-         'driver' => 'neato',
          'tube' => $tube,
  );
  
