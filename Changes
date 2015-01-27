@@ -3,6 +3,7 @@
  - Add EXAMPLE3 section to doc with overlapping.
  - Add images for EXAMPLE sections to doc.
  - Fix graph name.
+ - Fix minimal version of Perl to 5.6.0.
  - Remove 'driver' => 'neato' from EXAMPLE sections in doc (is default).
 
 0.03 2015-01-25T01:17:05+01:00
