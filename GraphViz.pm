@@ -78,7 +78,10 @@ sub new {
 			err "Parameter 'g' must be 'GraphViz2' object.";
 		}
 	} else {
-		my $name = $self->{'name'} || $self->{'tube'}->name;
+		my $name = $self->{'name'};
+		if (! defined $name) {
+			$name = $self->{'tube'}->name;
+		}
 		$self->{'g'} = GraphViz2->new(
 			'global' => {
 				'directed' => 0,

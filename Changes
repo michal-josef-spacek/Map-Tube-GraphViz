@@ -1,5 +1,6 @@
 0.04
  - Add 'g' parameter for GraphViz2 object.
+ - Fix graph name.
 
 0.03 2015-01-25T01:17:05+01:00
  - Improve CONTRIBUTORS section in doc.
