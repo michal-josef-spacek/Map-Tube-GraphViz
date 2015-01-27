@@ -24,7 +24,7 @@ our $VERSION = 0.04;
 sub node_color {
 	my ($obj, $node) = @_;
 	my %params = _node_color_params($obj, $node);
-	$obj->{'_g'}->add_node(
+	$obj->{'g'}->add_node(
 		'label' => $node->name,
 		'name' => $node->id,
 		%params,
@@ -36,7 +36,7 @@ sub node_color {
 sub node_color_without_label {
 	my ($obj, $node) = @_;
 	my %params = _node_color_params($obj, $node);
-	$obj->{'_g'}->add_node(
+	$obj->{'g'}->add_node(
 		'label' => '',
 		'name' => $node->id,
 		%params,

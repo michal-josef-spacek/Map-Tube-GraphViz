@@ -26,7 +26,7 @@ sub new {
 	# Edge callback.
 	$self->{'callback_edge'} = sub {
 		my ($self, $from, $to) = @_;
-		$self->{'_g'}->add_edge(
+		$self->{'g'}->add_edge(
 			'from' => $from,
 			'to' => $to,
 		);
@@ -41,6 +41,9 @@ sub new {
 
 	# Name of map.
 	$self->{'name'} = undef;
+
+	# GraphViz2 object.
+	$self->{'g'} = undef;
 
 	# Output.
 	$self->{'output'} = 'png';
@@ -61,26 +64,40 @@ sub new {
 		err "Parameter 'tube' must be 'Map::Tube' object.";
 	}
 
-	# GraphViz object.
-	my $name = $self->{'name'} || $self->{'tube'}->name;
-	$self->{'_g'} = GraphViz2->new(
-		'global' => {
-			'directed' => 0,
-		},
-		$name ? (
-			'graph' => {
-				'label' => $name,
-				'labelloc' => 'top',
+	# GraphViz2 object.
+	if (defined $self->{'g'}) {
+		if (defined $self->{'name'}) {
+			err "Parameter 'name' cannot be used with ".
+				"'g' parameter.";
+		}
+
+		# Check GraphViz2 object.
+		if (! blessed($self->{'g'})
+			|| ! $self->{'g'}->isa('GraphViz2')) {
+
+			err "Parameter 'g' must be 'GraphViz2' object.";
+		}
+	} else {
+		my $name = $self->{'name'} || $self->{'tube'}->name;
+		$self->{'g'} = GraphViz2->new(
+			'global' => {
+				'directed' => 0,
 			},
-		) : (),
-	);
+			$name ? (
+				'graph' => {
+					'label' => $name,
+					'labelloc' => 'top',
+				},
+			) : (),
+		);
+	}
 
 	# Check output format.
 	if (! defined $self->{'output'}) {
 		err "Parameter 'output' is required.";
 	}
 	if (none { $self->{'output'} eq $_ }
-		keys %{$self->{'_g'}->valid_attributes->{'output_format'}}) {
+		keys %{$self->{'g'}->valid_attributes->{'output_format'}}) {
 
 		err "Unsupported 'output' parameter '$self->{'output'}'.";
 	}
@@ -111,7 +128,7 @@ sub graph {
 		}
 	}
 	eval {
-		$self->{'_g'}->run(
+		$self->{'g'}->run(
 			'driver' => $self->{'driver'},
 			'format' => $self->{'output'},
 			'output_file' => $output_file,
@@ -120,7 +137,7 @@ sub graph {
 	if ($EVAL_ERROR) {
 		err 'Cannot create GraphViz output.',
 			'Error', $EVAL_ERROR,
-			'Dot input', $self->{'_g'}->dot_input;
+			'Dot input', $self->{'g'}->dot_input;
 	}
 	return;
 }
@@ -157,7 +174,7 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  Default value is this:
  sub { 
          my ($self, $from, $to) = @_;
-         $self->{'_g'}->add_edge(
+         $self->{'g'}->add_edge(
          	'from' => $from,
          	'to' => $to,
          );
@@ -174,9 +191,27 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
  GraphViz2 driver.
  Default value is 'neato'.
 
+=item * C<g>
+
+ GraphViz2 object.
+ Parameters 'g' and 'name' cannot combine.
+ Default value is this:
+ GraphViz2->new(
+ 	'global' => {
+ 		'directed' => 0,
+ 	},
+ 	$name ? (
+ 		'graph' => {
+ 			'label' => $name,
+ 			'labelloc' => 'top',
+ 		},
+ 	) : (),
+ );
+
 =item * C<name>
 
  Name of map.
+ Parameters 'g' and 'name' cannot combine.
  Default value is Map::Tube->name or undef.
 
 =item * C<output>

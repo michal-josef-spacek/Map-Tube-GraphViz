@@ -16,7 +16,7 @@ METHODS
                      Default value is this:
                      sub { 
                              my ($self, $from, $to) = @_;
-                             $self->{'_g'}->add_edge(
+                             $self->{'g'}->add_edge(
                                     'from' => $from,
                                     'to' => $to,
                              );
@@ -33,9 +33,27 @@ METHODS
                      GraphViz2 driver.
                      Default value is 'neato'.
 
+            *       "g"
+
+                     GraphViz2 object.
+                     Parameters 'g' and 'name' cannot combine.
+                     Default value is this:
+                     GraphViz2->new(
+                            'global' => {
+                                    'directed' => 0,
+                            },
+                            $name ? (
+                                    'graph' => {
+                                            'label' => $name,
+                                            'labelloc' => 'top',
+                                    },
+                            ) : (),
+                     );
+
             *       "name"
 
                      Name of map.
+                     Parameters 'g' and 'name' cannot combine.
                      Default value is Map::Tube->name or undef.
 
             *       "output"
