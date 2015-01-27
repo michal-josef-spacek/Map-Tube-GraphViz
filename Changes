@@ -1,5 +1,6 @@
 0.04
  - Add 'g' parameter for GraphViz2 object.
+ - Add EXAMPLE3 section to doc with overlapping.
  - Add images for EXAMPLE sections to doc.
  - Fix graph name.
  - Remove 'driver' => 'neato' from EXAMPLE sections in doc (is default).
