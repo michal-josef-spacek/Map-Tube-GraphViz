@@ -1,4 +1,5 @@
 0.05
+ - Add tests.
  - Improve constructor error check of 'tube' parameter.
  - Update examples/ex3.pl example.
 
