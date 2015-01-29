@@ -14,18 +14,18 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 0a3efec237ce0136f041b1ca31ddbc1437e98fe0 Changes
-SHA1 26d0ee1450fea7cfe4d897657252781d77765083 GraphViz.pm
-SHA1 fe9875e5d1e866e8388210b3297c33112e993aa3 GraphViz/Utils.pm
+SHA1 b9bdabe364466f827216f2a40546e58194e80cac Changes
+SHA1 782c72216e055d1aafbd7cf817ced2ed6360bb1d GraphViz.pm
+SHA1 7ee555f68ee51f298f7643c5e21245aadd467b49 GraphViz/Utils.pm
 SHA1 882221895a73bad18eb9f16a0ce523a968a932c1 LICENSE.artistic_2
 SHA1 507a10efa92555ddddfbe72be27964d9e3eef80f LICENSE.bsd
-SHA1 87ee765af8771698fceab9b742c96ebc696ada19 MANIFEST
-SHA1 ce8408f71c839dbabe620a9c1e46ec6c24d1a1e7 META.yml
-SHA1 9b60484d206a5a1b24ee84db5dbc57827fcf16ce Makefile.PL
-SHA1 607201d595bf5087b048639a32e8b7ba2c204bb1 README
+SHA1 615bbd0d5f1a056e855fee4e4fdba2666ee30220 MANIFEST
+SHA1 31c450a56c18f29807691ae9cce00e76b797dc8e META.yml
+SHA1 cc16946ec42c1461cef8d72253d0e0430ab164b3 Makefile.PL
+SHA1 04e08d4b7f8766490c51ddfdf9b37c012fd2bd67 README
 SHA1 ba7b59a0d46cb5ff56d4695793362c46ea3a1fc0 examples/ex1.pl
 SHA1 8c383c9f6d42c2a783afb8bbceb70cb5f2bd2de6 examples/ex2.pl
-SHA1 5459b1a614ed56531cf05d1ab0590c5a18a1b724 examples/ex3.pl
+SHA1 eaebfe7c286e494965a87f61712e43a91821bed1 examples/ex3.pl
 SHA1 fb35caf900c5eadaddb9f53364a50714af7ff941 images/ex1.png
 SHA1 7c9bd0efe4e0ad84b4fd179373277a8fb50caee1 images/ex2.png
 SHA1 6e60c3b45ebc7422e348b26e5b846fd97364565e images/ex3.png
@@ -39,21 +39,22 @@ SHA1 79f5b4199f622e8b05aac266b0c39f6a85bb303f inc/Module/Install/ReadmeFromPod.p
 SHA1 65a1f09af1f4f9e47a98b6b45667c328b1b2f9c0 inc/Module/Install/Win32.pm
 SHA1 f191c49475b3f51775180cd4f7e41e3bdab7f85a inc/Module/Install/WriteAll.pm
 SHA1 028b85d29fc289353b0947f1d57205ae091ddae4 t/Map-Tube-GraphViz-Utils/00-use.t
-SHA1 4b4d673b6c0caea1a3c70dae89c095724d02ca04 t/Map-Tube-GraphViz-Utils/01-version.t
+SHA1 f1e3c7016f25fb29bbdb51190abfee235033ae8d t/Map-Tube-GraphViz-Utils/01-version.t
 SHA1 89f5c1479dbea85919645bfc73072ffcda985532 t/Map-Tube-GraphViz-Utils/02-pod_coverage.t
 SHA1 8d3ae5c02ac4f7d397d2a05c9c77adc4ee1842c5 t/Map-Tube-GraphViz-Utils/03-pod.t
 SHA1 52dce8b6682173de235d83bb867dcad0409f31a1 t/Map-Tube-GraphViz/00-use.t
-SHA1 227e7f901b38afe50d1112ebfb1c7978e36b5044 t/Map-Tube-GraphViz/01-version.t
+SHA1 68e514a82f917bbddf97cc53314ea5a3f3ad5f91 t/Map-Tube-GraphViz/01-version.t
 SHA1 fe8c4819bf8fb6e4bd641d4749a2690d78149fd9 t/Map-Tube-GraphViz/02-pod_coverage.t
 SHA1 c8c6141e640547c87fe7bfd3d2572b1299f3c3a1 t/Map-Tube-GraphViz/03-pod.t
+SHA1 3270dbd46382deb784809811dd62336a84278ae8 t/Map-Tube-GraphViz/04-new.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.12 (GNU/Linux)
 
-iQEcBAEBAgAGBQJUxzdfAAoJEJe+XXKaIuTlCywIAIVP5KCUS3TPy68jB32wBaMh
-lJJgzKz+pfd5caa2I6Tb/yTQnw4OXuDHoGpjsXxjsdRycTRVlunmkBC07WIb/ZuL
-BNEl+P7t9/oh+rt8m5fTCGOVNeuuDwQ/4C9i0QGX8iCH1NC6vyWVZjtbLvI2sm2j
-ryBgZTA9Gq7dn1iempBt0Xj8m4TEFn32KyEtgTtt16xfgm10kSK6D1/zZR2uM9LG
-mH+fgKKWVsA7Hw9M5N4FN1/z1GisyEmKL5c4is4JGaedHk/EiijrJuoywn3hA5t0
-OmsPoPR55eqAYcEs+N+Mk6VaWFakq0PqUSSI2K6BefX5BUGJGuZfWuwytCLVa7o=
-=qJXm
+iQEcBAEBAgAGBQJUyrdYAAoJEJe+XXKaIuTlRtQH/0TmOEU3hMzjhRLSdqAweNRU
+ful7+Dh9/P25mYGlEtzMp9MCwNEDgMV07wh1jJR+QoDICqhefa2PlgW3xbAQ1E0K
+k038euhuXfM8L4lTyTOaQaNrtnIDjP3GPpvSO1hsimjAfFNPPhu735V2+p3sHviS
+bLXo9vhJ2MKR0I7U0xpXwbXGm9Ox+KDiS4GQeWk2yLi7xLQwxsxNlzuNWgsY9M5V
+T46jFc7Tc64/k+5x4rSKQrFw6Jovnz0G2lJnnSBc0rb9+dGuSv3raAWd+v5hBdYo
+nnwxWUMrgNHAHzgPfsA+AhA8FF0N5LWQgxsRfnD/CCxJ3zfGx3luzQ1q4CwTqzo=
+=EkQQ
 -----END PGP SIGNATURE-----
