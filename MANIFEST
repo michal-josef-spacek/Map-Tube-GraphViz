@@ -2,11 +2,13 @@ Changes
 examples/ex1.pl
 examples/ex2.pl
 examples/ex3.pl
+examples/ex4.pl
 GraphViz.pm
 GraphViz/Utils.pm
 images/ex1.png
 images/ex2.png
 images/ex3.png
+images/ex4.png
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm

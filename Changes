@@ -1,4 +1,7 @@
 0.06
+ [Map::Tube::GraphViz]
+ - Add EXAMPLE4 section in doc and examples/ex4.pl.
+
  [Map::Tube::GraphViz::Utils]
  - Add node_color_id() subroutine.
 
