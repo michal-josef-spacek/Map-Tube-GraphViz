@@ -10,8 +10,8 @@ use Error::Pure qw(err);
 use Readonly;
 
 # Constants.
-Readonly::Array our @EXPORT_OK => qw(node_color node_color_without_label
-	color_line);
+Readonly::Array our @EXPORT_OK => qw(node_color node_color_id
+	node_color_without_label color_line);
 Readonly::Array our @COLORS => qw(red green yellow cyan magenta blue grey
 	orange brown white greenyellow red4 violet tomato cadetblue aquamarine
 	lawngreen indigo deeppink darkslategrey khaki thistle peru darkgreen
@@ -26,6 +26,18 @@ sub node_color {
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => $node->name,
+		'name' => $node->id,
+		%params,
+	);
+	return;
+}
+
+# Create GraphViz color node with id as label.
+sub node_color_id {
+	my ($obj, $node) = @_;
+	my %params = _node_color_params($obj, $node);
+	$obj->{'g'}->add_node(
+		'label' => $node->id,
 		'name' => $node->id,
 		%params,
 	);
@@ -102,7 +114,8 @@ __END__
 
 =head1 SYNOPSIS
 
- use Map::Tube::GraphViz::Utils qw(node_color node_color_without_label color_line);
+ use Map::Tube::GraphViz::Utils qw(node_color node_color_id node_color_without_label color_line);
+ node_color($obj, $node);
  node_color($obj, $node);
  node_color_without_label($obj, $node);
  my $color = color_line($obj, $line);
@@ -114,6 +127,12 @@ __END__
 =item C<node_color($obj, $node)>
 
  Create GraphViz color node.
+ $obj is Map::Tube::GraphViz object.
+ Returns undef.
+
+=item C<node_color_id($obj, $node)>
+
+ Create GraphViz color node with id as label.
  $obj is Map::Tube::GraphViz object.
  Returns undef.
 

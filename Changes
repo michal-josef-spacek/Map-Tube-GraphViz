@@ -1,4 +1,6 @@
 0.06
+ [Map::Tube::GraphViz::Utils]
+ - Add node_color_id() subroutine.
 
 0.05 2015-01-29T23:42:27+01:00
  - Add tests.
