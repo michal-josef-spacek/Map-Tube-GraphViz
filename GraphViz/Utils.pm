@@ -6,7 +6,6 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure qw(err);
 use Readonly;
 
 # Constants.
@@ -69,7 +68,7 @@ sub color_line {
 			} else {
 				$obj->{'_color_index'}++;
 				if ($obj->{'_color_index'} > $#COLORS) {
-					err "No color for line '$line'.";
+					$obj->{'_color_index'} = 0;
 				}
 			}
 			my $rand_color = $COLORS[$obj->{'_color_index'}];
@@ -150,14 +149,8 @@ __END__
 
 =back
 
-=head1 ERRORS
-
- color_line():
-         No color for line '%s'.
-
 =head1 DEPENDENCIES
 
-L<Error::Pure>,
 L<Exporter>,
 L<Readonly>.
 
