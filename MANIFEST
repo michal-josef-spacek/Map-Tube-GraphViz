@@ -29,6 +29,7 @@ t/Map-Tube-GraphViz-Utils/00-use.t
 t/Map-Tube-GraphViz-Utils/01-version.t
 t/Map-Tube-GraphViz-Utils/02-pod_coverage.t
 t/Map-Tube-GraphViz-Utils/03-pod.t
+t/Map-Tube-GraphViz-Utils/04-color_line.t
 t/Map-Tube-GraphViz/00-use.t
 t/Map-Tube-GraphViz/01-version.t
 t/Map-Tube-GraphViz/02-pod_coverage.t
