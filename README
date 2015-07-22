@@ -304,10 +304,14 @@ DEPENDENCIES
     Map::Tube::GraphViz::Utils, Scalar::Util.
 
 SEE ALSO
-    Map::Tube, Map::Tube::Graph, Map::Tube::Plugin::Graph,
-    Map::Tube::Text::Table, Task::Map::Tube.
+    Map::Metro::Graph
+        Map::Metro graph.
 
-    Map::Metro::Graph.
+    Task::Map::Tube
+        Install the Map::Tube modules.
+
+    Task::Map::Tube::Metro
+        Install the Map::Tube concrete metro modules.
 
 REPOSITORY
     <https://github.com/tupinek/Map-Tube-GraphViz>

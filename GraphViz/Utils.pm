@@ -156,7 +156,21 @@ L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Map::Tube>.
+=over
+
+=item L<Map::Tube::GraphViz>
+
+GraphViz output for Map::Tube.
+
+=item L<Task::Map::Tube>
+
+Install the Map::Tube modules.
+
+=item L<Task::Map::Tube::Metro>
+
+Install the Map::Tube concrete metro modules.
+
+=back
 
 =head1 REPOSITORY
 
