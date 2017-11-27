@@ -10,6 +10,7 @@
  - Add 'callback_node_id' parameter.
 
  [Map::Tube::GraphViz::Utils]
+ - Add example section to doc.
  - Add cycling of colors instead error (Thanks Gisbert W. Selke - #103076).
  - Add tests for color_line() subroutine.
  - Fix to Map::Tube::Line with required id.

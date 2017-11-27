@@ -1,6 +1,5 @@
 TODO
 ====
-2. EXAMPLE section to Map::Tube::GraphViz::Utils.
 3. Testy.
 4. Moci vykreslit jenom urcite linky.
 6. Zkusit line type splines (from Gisbert W. Selke).
@@ -17,3 +16,6 @@ OK [20141217] skim
 
 5. Obrazky do dokumentace.
 OK [20150127] skim
+
+2. EXAMPLE section to Map::Tube::GraphViz::Utils.
+OK [20171127] skim
