@@ -3,6 +3,7 @@
  - Fix Makefile.PL for new version of Perl and no default »use lib '.'«.
  - Rewrite SEE ALSO section to new style.
  - Update Module::Install to 1.18 version.
+ - Update author name.
 
  [Map::Tube::GraphViz]
  - Add 'callback_node_id' parameter.

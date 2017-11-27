@@ -9,7 +9,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'GraphViz interface to the Map::Tube.';
-author 'Michal Spacek <skim@cpan.org>';
+author 'Michal Josef Spacek <skim@cpan.org>';
 license 'bsd';
 license 'artistic_2';
 name 'Map-Tube-GraphViz';
