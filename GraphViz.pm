@@ -27,14 +27,20 @@ sub new {
 	$self->{'callback_edge'} = sub {
 		my ($self, $from, $to) = @_;
 		$self->{'g'}->add_edge(
-			'from' => $from,
-			'to' => $to,
+			'from' => $self->{'callback_node_id'}->($self, $from),
+			'to' => $self->{'callback_node_id'}->($self, $to),
 		);
 		return;
 	};
 
 	# Node callback.
 	$self->{'callback_node'} = \&node_color;
+
+	# Node id callback.
+	$self->{'callback_node_id'} = sub {
+		my ($self, $node) = @_;
+		return $node->name;
+	};
 
 	# Driver.
 	$self->{'driver'} = 'neato';
@@ -120,8 +126,10 @@ sub new {
 # Get graph.
 sub graph {
 	my ($self, $output_file) = @_;
+	my $node_cache_hr = {};
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
 		$self->{'callback_node'}->($self, $node);
+		$node_cache_hr->{$node->id} = $node;
 	}
 	my @processed;
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
@@ -132,8 +140,15 @@ sub graph {
 				($_->[0] eq $link && $_->[1] eq $node->id)
 				} @processed) {
 
-				$self->{'callback_edge'}->($self, $node->id,
-					$link);
+				# Skip link to myself.
+				my $link_node = $node_cache_hr->{$link};
+				if ($self->{'callback_node_id'}->($self, $node)
+					ne $self->{'callback_node_id'}
+					->($self, $link_node)) {
+
+					$self->{'callback_edge'}->($self, $node,
+						$link_node);
+				}
 				push @processed, [$node->id, $link];
 			}
 		}

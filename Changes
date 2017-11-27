@@ -4,6 +4,9 @@
  - Rewrite SEE ALSO section to new style.
  - Update Module::Install to 1.18 version.
 
+ [Map::Tube::GraphViz]
+ - Add 'callback_node_id' parameter.
+
  [Map::Tube::GraphViz::Utils]
  - Add cycling of colors instead error (Thanks Gisbert W. Selke - #103076).
  - Add tests for color_line() subroutine.

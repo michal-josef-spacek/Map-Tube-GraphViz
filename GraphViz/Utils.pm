@@ -25,7 +25,7 @@ sub node_color {
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => $node->name,
-		'name' => $node->id,
+		'name' => $obj->{'callback_node_id'}->($obj, $node),
 		%params,
 	);
 	return;
@@ -37,7 +37,7 @@ sub node_color_id {
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => $node->id,
-		'name' => $node->id,
+		'name' => $obj->{'callback_node_id'}->($obj, $node),
 		%params,
 	);
 	return;
@@ -49,7 +49,7 @@ sub node_color_without_label {
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => '',
-		'name' => $node->id,
+		'name' => $obj->{'callback_node_id'}->($obj, $node),
 		%params,
 	);
 	return;
