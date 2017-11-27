@@ -7,6 +7,7 @@
  [Map::Tube::GraphViz::Utils]
  - Add cycling of colors instead error (Thanks Gisbert W. Selke - #103076).
  - Add tests for color_line() subroutine.
+ - Fix to Map::Tube::Line with required id.
 
 0.06 2015-02-24T08:09:07+01:00
  [Map::Tube::GraphViz]

@@ -12,7 +12,7 @@ use Test::NoWarnings;
 # Test.
 my $obj = Test::MockObject->new;
 my $line1 = Map::Tube::Line->new(
-	'name' => 'Line #1',
+	'id' => 'line1',
 );
 my $ret = color_line($obj, $line1);
 is($ret, 'red', 'Get first color for line #1.');
@@ -33,7 +33,7 @@ is($ret, 'red', 'Get first color for line #1.');
 my @ret;
 foreach my $num (3 .. 25) {
 	my $line = Map::Tube::Line->new(
-		'name' => 'Line #'.$num,
+		'id' => 'line'.$num,
 	);
 	$ret = color_line($obj, $line);
 	push @ret, $ret;
