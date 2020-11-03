@@ -8,10 +8,17 @@ use inc::Module::Install;
 # Definition.
 abstract 'GraphViz interface to the Map::Tube.';
 author 'Michal Josef Spacek <skim@cpan.org>';
+author_requires 'English' => 0;
+author_requires 'File::Object' => 0.05;
+author_requires 'Test::More' => 0;
+author_requires 'Test::NoWarnings' => 0;
+author_requires 'Test::Pod' => 0;
+author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
 license 'artistic_2';
 name 'Map-Tube-GraphViz';
 readme_from 'GraphViz.pm';
+recursive_author_tests('xt');
 requires 'Class::Utils' => '0.06';
 requires 'Error::Pure' => '0.21';
 requires 'Exporter' => 0;
@@ -34,8 +41,6 @@ test_requires 'Map::Tube::Prague' => 0;
 test_requires 'Test::MockObject' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
-test_requires 'Test::Pod' => 0;
-test_requires 'Test::Pod::Coverage' => 0;
 tests_recursive;
 version '0.07';
 
