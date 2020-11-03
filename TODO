@@ -4,8 +4,6 @@ TODO
 4. Moci vykreslit jenom urcite linky.
 6. Zkusit line type splines (from Gisbert W. Selke).
 7. Kdyz mam Singapore a mam na kazde lince stejnou stanici, tak sloucit.
-8. Fix Bug #103076 for Map-Tube-GraphViz: The module runs out of colours for large tube networks
-https://rt.cpan.org/Public/Bug/Display.html?id=103076
 9.
 
 Applied
@@ -21,3 +19,8 @@ OK [20150127] skim
 
 2. EXAMPLE section to Map::Tube::GraphViz::Utils.
 OK [20171127] skim
+
+8. Fix Bug #103076 for Map-Tube-GraphViz: The module runs out of colours for large tube networks
+https://rt.cpan.org/Public/Bug/Display.html?id=103076
+Fixed
+NONE [20201103] skim
