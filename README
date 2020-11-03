@@ -3,6 +3,7 @@ NAME
 
 SYNOPSIS
      use Map::Tube::GraphViz;
+
      my $obj = Map::Tube::GraphViz->new(%params);
      $obj->graph($output_file);
 

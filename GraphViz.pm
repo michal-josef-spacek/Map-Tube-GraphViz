@@ -178,6 +178,7 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 =head1 SYNOPSIS
 
  use Map::Tube::GraphViz;
+
  my $obj = Map::Tube::GraphViz->new(%params);
  $obj->graph($output_file);
 

@@ -2,6 +2,7 @@
  [Common]
  - Fix Makefile.PL for new version of Perl and no default »use lib '.'«.
  - Improve LICENSE AND COPYRIGHT section in doc.
+ - Improve SYNOPSIS section in doc.
  - Rewrite SEE ALSO section to new style.
  - Rewrite to use AUTHOR tests.
  - Update Module::Install to 1.19 version.
