@@ -4,7 +4,7 @@
  - Rewrite SEE ALSO section to new style.
  - Update Module::Install to 1.19 version.
  - Update author name.
- - Update copyright years to 2017.
+ - Update copyright years to 2020.
 
  [Map::Tube::GraphViz]
  - Add 'callback_node_id' parameter.
