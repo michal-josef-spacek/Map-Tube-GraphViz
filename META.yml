@@ -31,7 +31,7 @@ requires:
   Class::Utils: '0.06'
   Error::Pure: '0.21'
   Exporter: 0
-  GraphViz2: 0
+  GraphViz2: 2.59
   List::MoreUtils: 0
   Readonly: 0
   Scalar::Util: 0

@@ -110,9 +110,7 @@ sub new {
 	if (! defined $self->{'output'}) {
 		err "Parameter 'output' is required.";
 	}
-	if (none { $self->{'output'} eq $_ }
-		keys %{$self->{'g'}->valid_attributes->{'output_format'}}) {
-
+	if (! exists $self->{'g'}->valid_output_format->{$self->{'output'}}) {
 		err "Unsupported 'output' parameter '$self->{'output'}'.";
 	}
 

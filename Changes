@@ -12,6 +12,7 @@
 
  [Map::Tube::GraphViz]
  - Add 'callback_node_id' parameter.
+ - Update to new GraphViz2 module version 2.59 (changed API).
 
  [Map::Tube::GraphViz::Utils]
  - Add example section to doc.

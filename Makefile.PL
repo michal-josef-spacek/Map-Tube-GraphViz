@@ -22,7 +22,7 @@ recursive_author_tests('xt');
 requires 'Class::Utils' => '0.06';
 requires 'Error::Pure' => '0.21';
 requires 'Exporter' => 0;
-requires 'GraphViz2' => 0;
+requires 'GraphViz2' => 2.59;
 requires 'List::MoreUtils' => 0;
 requires 'Readonly' => 0;
 requires 'Scalar::Util' => 0;
