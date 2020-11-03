@@ -113,7 +113,7 @@ __END__
  use Map::Tube::GraphViz::Utils qw(node_color node_color_id node_color_without_label color_line);
 
  node_color($obj, $node);
- node_color($obj, $node);
+ node_color_id($obj, $node);
  node_color_without_label($obj, $node);
  my $color = color_line($obj, $line);
 
