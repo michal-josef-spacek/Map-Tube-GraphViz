@@ -14,7 +14,7 @@ Readonly::Array our @COLORS => qw(red green yellow cyan magenta blue grey
 	lawngreen indigo deeppink darkslategrey khaki thistle peru darkgreen
 );
 
-our $VERSION = 0.07;
+our $VERSION = 0.08;
 
 # Create GraphViz color node.
 sub node_color {
@@ -262,6 +262,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.07
+0.08
 
 =cut

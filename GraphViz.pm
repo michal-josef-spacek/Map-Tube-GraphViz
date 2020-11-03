@@ -11,7 +11,7 @@ use List::MoreUtils qw(none);
 use Map::Tube::GraphViz::Utils qw(node_color);
 use Scalar::Util qw(blessed);
 
-our $VERSION = 0.07;
+our $VERSION = 0.08;
 
 # Constructor.
 sub new {
@@ -569,6 +569,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.07
+0.08
 
 =cut
