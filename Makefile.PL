@@ -25,8 +25,8 @@ if ($PERL_VERSION lt v5.10.1) {
 requires 'perl' => '5.6.0';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=Map-Tube-GraphViz';
-resources 'homepage' => 'https://github.com/tupinek/Map-Tube-GraphViz';
-resources 'repository' => 'git://github.com/tupinek/Map-Tube-GraphViz';
+resources 'homepage' => 'https://github.com/michal-josef-spacek/Map-Tube-GraphViz';
+resources 'repository' => 'git://github.com/michal-josef-spacek/Map-Tube-GraphViz';
 test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => 0.22;
 test_requires 'File::Object' => 0.08;

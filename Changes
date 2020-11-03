@@ -4,6 +4,7 @@
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Rewrite SEE ALSO section to new style.
  - Update Module::Install to 1.19 version.
+ - Update author github username.
  - Update author name.
  - Update copyright years to 2020.
 

@@ -245,7 +245,7 @@ Install the Map::Tube concrete metro modules.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/Map-Tube-GraphViz>
+L<https://github.com/michal-josef-spacek/Map-Tube-GraphViz>
 
 =head1 AUTHOR
 
