@@ -1,11 +1,9 @@
 package Map::Tube::GraphViz::Utils;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use Readonly;
 
 # Constants.
@@ -16,7 +14,6 @@ Readonly::Array our @COLORS => qw(red green yellow cyan magenta blue grey
 	lawngreen indigo deeppink darkslategrey khaki thistle peru darkgreen
 );
 
-# Version.
 our $VERSION = 0.07;
 
 # Create GraphViz color node.

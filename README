@@ -87,11 +87,9 @@ ERRORS
                      Unknown parameter '%s'.
 
 EXAMPLE1
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use English;
      use Error::Pure qw(err);
      use Map::Tube::GraphViz;
@@ -136,11 +134,9 @@ EXAMPLE1
      # -rw-r--r-- 1 skim skim 1503067 Jan 27 07:24 Berlin.png
 
 EXAMPLE2
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use English;
      use Error::Pure qw(err);
      use Map::Tube::GraphViz;
@@ -187,11 +183,9 @@ EXAMPLE2
      # -rw-r--r-- 1 skim skim 885928 Jan 27 07:43 Berlin.png
 
 EXAMPLE3
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use English;
      use Error::Pure qw(err);
      use GraphViz2;
@@ -249,11 +243,9 @@ EXAMPLE3
      # -rw-r--r-- 1 skim skim 1212857 Jan 27 07:51 Berlin.png
 
 EXAMPLE4
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use English;
      use Error::Pure qw(err);
      use Map::Tube::GraphViz;

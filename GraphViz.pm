@@ -1,10 +1,8 @@
 package Map::Tube::GraphViz;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use English;
 use Error::Pure qw(err);
@@ -13,7 +11,6 @@ use List::MoreUtils qw(none);
 use Map::Tube::GraphViz::Utils qw(node_color);
 use Scalar::Util qw(blessed);
 
-# Version.
 our $VERSION = 0.07;
 
 # Constructor.
@@ -278,11 +275,9 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English;
  use Error::Pure qw(err);
  use Map::Tube::GraphViz;
@@ -336,11 +331,9 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English;
  use Error::Pure qw(err);
  use Map::Tube::GraphViz;
@@ -396,11 +389,9 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English;
  use Error::Pure qw(err);
  use GraphViz2;
@@ -467,11 +458,9 @@ Map::Tube::GraphViz - GraphViz output for Map::Tube.
 
 =head1 EXAMPLE4
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English;
  use Error::Pure qw(err);
  use Map::Tube::GraphViz;

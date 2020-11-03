@@ -1,8 +1,6 @@
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Map::Tube::GraphViz::Utils qw(color_line);
 use Map::Tube::Line;
 use Test::MockObject;
