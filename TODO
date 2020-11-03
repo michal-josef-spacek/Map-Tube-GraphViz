@@ -4,7 +4,11 @@ TODO
 4. Moci vykreslit jenom urcite linky.
 6. Zkusit line type splines (from Gisbert W. Selke).
 7. Kdyz mam Singapore a mam na kazde lince stejnou stanici, tak sloucit.
-9.
+9. V Warsaw metru je problem s vykreslovanim stanice, ktera je na dvou linkach.
+Ma dve id, takze se dvakrat prochazi pres vsechny nody. A jedna s linek je
+tunel, takze se prirazuje barva tunelu a ne barva druhe linky.
+Proste v graph nemuzu jit pres vsechny nody takhle.
+10.
 
 Applied
 =======
