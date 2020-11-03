@@ -121,6 +121,7 @@ sub new {
 # Get graph.
 sub graph {
 	my ($self, $output_file) = @_;
+
 	my $node_cache_hr = {};
 	foreach my $node (values %{$self->{'tube'}->nodes}) {
 		$self->{'callback_node'}->($self, $node);
@@ -160,6 +161,7 @@ sub graph {
 			'Error', $EVAL_ERROR,
 			'Dot input', $self->{'g'}->dot_input;
 	}
+
 	return;
 }
 

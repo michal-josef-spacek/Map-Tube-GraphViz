@@ -19,42 +19,49 @@ our $VERSION = 0.08;
 # Create GraphViz color node.
 sub node_color {
 	my ($obj, $node) = @_;
+
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => $node->name,
 		'name' => $obj->{'callback_node_id'}->($obj, $node),
 		%params,
 	);
+
 	return;
 }
 
 # Create GraphViz color node with id as label.
 sub node_color_id {
 	my ($obj, $node) = @_;
+
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => $node->id,
 		'name' => $obj->{'callback_node_id'}->($obj, $node),
 		%params,
 	);
+
 	return;
 }
 
 # Create GraphViz color node without label.
 sub node_color_without_label {
 	my ($obj, $node) = @_;
+
 	my %params = _node_color_params($obj, $node);
 	$obj->{'g'}->add_node(
 		'label' => '',
 		'name' => $obj->{'callback_node_id'}->($obj, $node),
 		%params,
 	);
+
 	return;
 }
 
 # Get line color.
 sub color_line {
 	my ($obj, $line) = @_;
+
 	my $line_name = $line->id || $line->name;
 	if (! exists $obj->{'_color_line'}->{$line_name}) {
 		if ($line->color) {
@@ -72,12 +79,14 @@ sub color_line {
 			$obj->{'_color_line'}->{$line_name} = $rand_color;
 		}
 	}
+
 	return $obj->{'_color_line'}->{$line_name};
 }
 
 # Get color node parameters.
 sub _node_color_params {
 	my ($obj, $node) = @_;
+
 	my @node_lines = @{$node->line};
 	my %params;
 	if (@node_lines == 1) {
@@ -93,6 +102,7 @@ sub _node_color_params {
 			} @node_lines),
 		);
 	}
+
 	return %params;
 }
 
