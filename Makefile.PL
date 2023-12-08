@@ -30,8 +30,7 @@ if ($PERL_VERSION lt v5.10.1) {
 	requires 'UNIVERSAL::DOES' => 0;
 }
 requires 'perl' => '5.6.0';
-resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
-	'?Name=Map-Tube-GraphViz';
+resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Map-Tube-GraphViz/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Map-Tube-GraphViz';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Map-Tube-GraphViz';
 test_requires 'English' => 0;

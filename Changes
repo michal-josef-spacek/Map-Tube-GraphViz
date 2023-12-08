@@ -1,6 +1,7 @@
 0.08
  [Common]
  - Add spaces after arguments and before return.
+ - Move bugtracker to github.
  - Update Module::Install to 1.21 version.
 
 0.07 2020-11-03T14:04:34+01:00

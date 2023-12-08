@@ -37,7 +37,7 @@ requires:
   Scalar::Util: 0
   perl: 5.6.0
 resources:
-  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Map-Tube-GraphViz
+  bugtracker: https://github.com/michal-josef-spacek/Map-Tube-GraphViz/issues
   homepage: https://github.com/michal-josef-spacek/Map-Tube-GraphViz
   license: http://opensource.org/licenses/artistic-license-2.0.php
   repository: git://github.com/michal-josef-spacek/Map-Tube-GraphViz
