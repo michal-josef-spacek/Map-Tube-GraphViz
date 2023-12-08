@@ -8,7 +8,8 @@ TODO
 Ma dve id, takze se dvakrat prochazi pres vsechny nody. A jedna s linek je
 tunel, takze se prirazuje barva tunelu a ne barva druhe linky.
 Proste v graph nemuzu jit pres vsechny nody takhle.
-10.
+10. In Budapest map: crossing between red and green is only in one color.
+11.
 
 Applied
 =======
